@@ -24,6 +24,10 @@ import Cricket from "./Cricket.png";
 import Photoshop from "./Photoshop.png";
 import Oracle from "./Oracle.png";
 import NexHome from "./NexHome.png";
+import Home from "./Home.png";
+import SamrtHome from "./SamrtHome.png";
+import FoodOrder from "./FoodOrder.png";
+import DoctorAppointment from "./DoctorAppointment.png";
 
 
 export const assets = {
@@ -53,7 +57,11 @@ export const assets = {
   Cricket,
   Photoshop,
   Oracle,
-  NexHome
+  NexHome,
+  Home,
+  SamrtHome,
+  FoodOrder,
+  DoctorAppointment
 };
 
 

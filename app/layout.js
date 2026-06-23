@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
         />
       </head>
 
-      <body className="antialiased leading-8 overflow-x-hidden bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
+      <body className="antialiased leading-8 overflow-x-hidden bg-gray-900 text-gray-900 dark:text-white">
         {children}
       </body>
     </html>

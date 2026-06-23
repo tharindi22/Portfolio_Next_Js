@@ -8,21 +8,22 @@ const Projects = () => {
   return (
     <section id="projects" className="py-16 px-16">
       <div className="max-w-5xl mx-auto ">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          My <span className="gradient-text">Projects</span>
-        </h2>
-        <p className="text-gray-700 dark:text-gray-300 text-center mb-12 max-w-2xl mx-auto">
-          Here are some of my recent projects. Each one presented unique
-          challenges and opportunities for growth.
-        </p>
+        <div className="mb-14">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4  text-white">
+            My <span className="gradient-text">Projects</span>
+          </h2>
+
+          
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-7">
           {/* Project 1 */}
-          <div className="project-card bg-gray-900 rounded-xl overflow-hidden shadow-lg mb-16">
+          <div className="project-card bg-gray-900 rounded-md overflow-hidden shadow-lg mb-16">
             <Link href="/ProjectMore" target="BLYSS" className="">
               <Image
-                src={assets.commerce}
-                className=" object-cover h-60 relative"
+                src={assets.Home}
+                alt="BLYSS E-commerce Clothing Website"
+                className="object-cover  relative"
               />
               <div className="grid grid-cols-1 lg:grid-cols-2 items-center p-4">
                 <div>
@@ -38,29 +39,16 @@ const Projects = () => {
               </div>
             </Link>
 
-            {/* ================== start ==================
-
-            <div className="flex items-center gap-4 p-4 pt-2">
-              <Link
-                href="https://www.figma.com/design/2GLFjGRx4rDWcaEsX8agO6/Smart-Home?node-id=70-143&t=W6RzWBWPOY209Yvq-1"
-                target="NexHome"
-                className="px-6 py-2 flex-1 flex items-center justify-center gap-3 border border-gray-400 text-gray-400 text-base rounded-lg transition cursor-pointer"
-              >
-                View Figma Project
-                <i className="fas fa-external-link-alt text-xs"></i>
-              </Link>
-            </div> 
-
-            ================== End  ================== */}
+           
           </div>
 
           {/* Project 2 */}
-          <div className="project-card bg-gray-900 rounded-xl overflow-hidden shadow-lg mb-16">
+          <div className="project-card bg-gray-00 rounded-xl overflow-hidden shadow-lg mb-16">
             <Link href="/ProjectMore/nexhome" className="">
               <Image
-                src={assets.NexHome}
+                src={assets.SamrtHome}
                 alt="NexHome Smart Home Dashboard"
-                className="object-cover h-60 relative"
+                className="object-cover  relative"
               />
 
               <div className="grid grid-cols-1 lg:grid-cols-2 items-center p-4">
@@ -76,13 +64,14 @@ const Projects = () => {
               </div>
             </Link>
           </div>
+
           {/* Project 3 */}
           <div className="project-card bg-gray-900 rounded-xl overflow-hidden shadow-lg mb-16">
             <Link href="/ProjectMore/grabber" className="">
               <Image
-                src={assets.Food}
+                src={assets.FoodOrder}
                 alt="Grabber Mobile Food Ordering App"
-                className="object-cover h-60 relative"
+                className="object-cover  relative"
               />
 
               <div className="grid grid-cols-1 lg:grid-cols-2 items-center p-4">
@@ -99,12 +88,13 @@ const Projects = () => {
             </Link>
           </div>
 
+           {/* Project 4 */}
           <div className="project-card bg-gray-900 rounded-xl overflow-hidden shadow-lg mb-16">
             <Link href="/ProjectMore/doctor-appointment-system" className="">
               <Image
-                src={assets.Doctor}
+                src={assets.DoctorAppointment}
                 alt="Doctor Appointment System"
-                className="object-cover h-60 relative"
+                className="object-cover  relative"
               />
 
               <div className="grid grid-cols-1 lg:grid-cols-2 items-center p-4">
@@ -121,6 +111,23 @@ const Projects = () => {
             </Link>
           </div>
 
+
+
+
+           {/* ================== start ==================
+
+            <div className="flex items-center gap-4 p-4 pt-2">
+              <Link
+                href="https://www.figma.com/design/2GLFjGRx4rDWcaEsX8agO6/Smart-Home?node-id=70-143&t=W6RzWBWPOY209Yvq-1"
+                target="NexHome"
+                className="px-6 py-2 flex-1 flex items-center justify-center gap-3 border border-gray-400 text-gray-400 text-base rounded-lg transition cursor-pointer"
+              >
+                View Figma Project
+                <i className="fas fa-external-link-alt text-xs"></i>
+              </Link>
+            </div> 
+
+            ================== End  ================== */}
           {/* 
           Project 4
           <div className="project-card bg-gray-300 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg mb-16">

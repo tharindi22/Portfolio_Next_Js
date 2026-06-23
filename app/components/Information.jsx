@@ -10,39 +10,49 @@ const Information = () => {
     setResult("Sending...");
 
     const formData = new FormData(event.target);
+    formData.append("subject", "New Portfolio Contact Message");
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
 
-    const data = await response.json();
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      });
 
-    if (data.success) {
-      setResult("Form Submitted Successfully");
-      event.target.reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
+      const data = await response.json();
+
+      if (response.status === 200) {
+        setResult("✅ Message sent successfully!");
+        event.target.reset();
+      } else {
+        setResult(data.message || "❌ Something went wrong!");
+      }
+    } catch (error) {
+      setResult("❌ Failed to send message. Please try again.");
     }
   };
 
   return (
-    <section id="contact" className="py-16 px-4 ">
-      <div className="max-w-6xl mx-auto ">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-slate-800 dark:text-white">
-          Get In <span className="gradient-text">Touch</span>
-        </h2>
+    <section id="Information" className="py-16 px-16 lg:px-20">
+      <div className="max-w-6xl mx-auto">
 
-        <p className="text-gray-700 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-          Have a project in mind or want to collaborate? Feel free to reach out
-          to me using the form below or through my social media.
-        </p>
+        {/* Title */}
+        <div className="mb-14">
+          <h2 className="text-3xl md:text-4xl font-bold text-white">
+            Get In <span className="gradient-text">Touch</span>
+          </h2>
+        </div>
 
+        {/* Layout */}
         <form
           onSubmit={handleSubmit}
-          method="POST"
-          className="grid grid-cols-1 lg:grid-cols-3 gap-8 px-4 sm:px-6 md:px-12"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-12"
         >
           <input
             type="hidden"
@@ -50,163 +60,150 @@ const Information = () => {
             value="9654d61f-1c42-4d30-a5be-5fd59dc34138"
           />
 
-          {/* FORM SECTION */}
+          {/* LEFT - FORM */}
           <div className="lg:col-span-2">
-            <div className="space-y-4">
+            <div className="space-y-6">
+
               <div>
-                <label className="text-gray-600 dark:text-gray-300 text-md mb-1">
-                  Your Name sdd
+                <label className="block text-gray-300 mb-1">
+                  Your Name
                 </label>
                 <input
                   type="text"
                   name="first_name"
                   required
-                  className="w-full px-3 py-2.5 text-sm bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:border-indigo-500 text-gray-300"
+                  className="w-full px-4 py-3 text-sm bg-gray-800 border border-gray-700 rounded-md text-gray-200 focus:border-indigo-500 outline-none"
                   placeholder="Sara"
                 />
               </div>
 
               <div>
-                <label className="text-gray-600 dark:text-gray-300 text-md mb-1">
-                  Email
+                <label className="block text-gray-300 mb-1">
+                  Your Email
                 </label>
                 <input
                   type="email"
                   name="email"
                   required
-                  className="w-full px-3 py-2.5 text-sm bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:border-indigo-500 text-gray-300"
-                  placeholder="Ekanayake"
+                  className="w-full px-4 py-3 text-sm bg-gray-800 border border-gray-700 rounded-md text-gray-200 focus:border-indigo-500 outline-none"
+                  placeholder="sara@gmail.com"
                 />
               </div>
 
               <div>
-                <label className="block text-gray-600 dark:text-gray-300 text-md mb-1">
-                  YourMessage
+                <label className="block text-gray-300 mb-1">
+                  Your Message
                 </label>
 
                 <textarea
                   name="message"
-                  required
                   rows="4"
-                  className="w-full px-3 py-6 text-sm bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:border-indigo-500 text-gray-300"
+                  required
+                  className="w-full px-4 py-3 text-sm bg-gray-800 border border-gray-700 rounded-md text-gray-200 focus:border-indigo-500 outline-none"
                   placeholder="Your message here..."
-                ></textarea>
+                />
 
                 <button
                   type="submit"
-                  className="w-full px-4 py-3 text-sm bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-md hover:opacity-90 transition shadow-md mt-4"
+                  className="w-full mt-4 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-md hover:opacity-90 transition"
                 >
                   Send Message
                 </button>
 
                 {result && (
-                  <p className="text-green-400 mt-2">{result}</p>
+                  <p className="mt-3 text-center text-green-400">
+                    {result}
+                  </p>
                 )}
               </div>
             </div>
           </div>
 
-          {/* CONTACT INFO */}
-          <div className="space-y-4 ">
-            <div className="w-full lg:w-[350px] bg-gray-200 dark:bg-gray-800 rounded-xl p-6 shadow-lg mb-10">
-              <h3 className="text-2xl font-semibold mb-6 text-gray-700 dark:text-white">
+          {/* RIGHT - CONTACT */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="w-full max-w-sm bg-gray-800 rounded-xl p-6 space-y-6">
+
+              <h3 className="text-2xl font-semibold text-white">
                 Contact Information
               </h3>
 
-              <div className="space-y-5 ">
-                <div className="flex items-center ">
-                  <div className="min-w-10 min-h-10 w-10 h-10 rounded-full bg-indigo-500 bg-opacity-20 flex items-center justify-center mr-3">
-                    <i className="fas fa-envelope text-indigo-400 text-lg sm:text-xl "></i>
+              {/* Email */}
+          
+                <div className="flex items-center">
+                  <div className="w-10 h-10 rounded-full bg-indigo-500/20 flex items-center justify-center mr-3">
+                    <i className="fas fa-envelope text-indigo-400"></i>
                   </div>
-
                   <div>
-                    <h4 className=" font-medium text-gray-700 dark:text-gray-300">
-                      Email
-                    </h4>
+                    <h4 className="font-medium text-gray-300">Email</h4>
                     <a
                       href="mailto:ttharindiattanayaka@gmail.com"
-                      className="text-indigo-500 dark:text-indigo-400 text-md hover:text-indigo-300 transition"
+                      className="text-indigo-400 text-sm"
                     >
                       ttharindiattanayaka@gmail.com
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-center">
-                  <div className="min-w-10 min-h-10 w-10 h-10 rounded-full bg-indigo-500 bg-opacity-20 flex items-center justify-center mr-3">
-                    <i className="fas fa-phone text-indigo-700 dark:text-indigo-400 "></i>
-                  </div>
 
-                  <div>
-                    <h4 className="text-gray-700 dark:text-gray-300 font-medium">
-                      Phone
-                    </h4>
-                    <a
-                      href="tel:+94710328089"
-                      className="text-indigo-500 dark:text-indigo-400 hover:text-indigo-300 transition"
-                    >
-                      +94 71 0328089
-                    </a>
-                  </div>
+              {/* Phone */}
+              <div className="flex items-center">
+                <div className="w-10 h-10 rounded-full bg-indigo-500/20 flex items-center justify-center mr-3">
+                  <i className="fas fa-phone text-indigo-400"></i>
                 </div>
-
-                <div className="flex items-center">
-                  <div className="min-w-10 min-h-10 w-10 h-10 rounded-full bg-indigo-500 bg-opacity-20 flex items-center justify-center mr-3">
-                    <i className="fas fa-map-marker-alt text-indigo-400 text-lg sm:text-xl "></i>
-                  </div>
-
-                  <div>
-                    <h4 className="text-gray-700 dark:text-gray-300 font-medium">
-                      Location
-                    </h4>
-                    <p className="text-indigo-500 dark:text-indigo-400">
-                      Kurunegala
-                    </p>
-                  </div>
-                </div>
-
                 <div>
-                  <h4 className="text-gray-700 dark:text-gray-300 font-medium mb-4">
-                    Social Media
-                  </h4>
-
-                  <div className="flex space-x-4">
-                    <a
-                      href="https://www.linkedin.com/in/tharindi-aththanayaka-06a489313/"
-                      className="w-8 h-8 rounded-full bg-gray-500 dark:bg-gray-700 flex items-center justify-center text-gray-300 hover:bg-indigo-600 hover:text-white transition"
-                    >
-                      <i className="fa-brands fa-linkedin-in text-white"></i>
-                    </a>
-
-                    <a
-                      href="https://github.com/tharindi22"
-                      className="w-8 h-8 rounded-full bg-gray-500 dark:bg-gray-700 flex items-center justify-center text-gray-300 hover:bg-indigo-600 hover:text-white transition"
-                    >
-                      <i className="fa-brands fa-github text-white"></i>
-                    </a>
-
-                    <a
-                      href="https://www.facebook.com/profile.php?id=61553104328803"
-                      className="w-8 h-8 rounded-full bg-gray-500 dark:bg-gray-700 flex items-center justify-center text-gray-300 hover:bg-indigo-600 hover:text-white transition"
-                    >
-                      <i className="fa-brands fa-facebook text-white"></i>
-                    </a>
-
-                    <a
-                      href="https://www.instagram.com/tharindi_attanayaka/"
-                      className="w-8 h-8 rounded-full bg-gray-500 dark:bg-gray-700 flex items-center justify-center text-gray-300 hover:bg-indigo-600 hover:text-white transition"
-                    >
-                      <i className="fa-brands fa-instagram text-white"></i>
-                    </a>
-                  </div>
+                  <h4 className="font-medium text-gray-300">Phone</h4>
+                  <a
+                    href="tel:+94710328089"
+                    className="text-indigo-400 text-sm"
+                  >
+                    +94 71 032 8089
+                  </a>
                 </div>
               </div>
+
+              {/* Location */}
+              <div className="flex items-center">
+                <div className="w-10 h-10 rounded-full bg-indigo-500/20 flex items-center justify-center mr-3">
+                  <i className="fas fa-map-marker-alt text-indigo-400"></i>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-300">Location</h4>
+                  <p className="text-indigo-400 text-sm">
+                    Kurunegala, Sri Lanka
+                  </p>
+                </div>
+              </div>
+
+              {/* Social Media (ALL KEPT) */}
+              <div>
+                <p className="text-gray-300 mb-3 text-md">Social Media</p>
+
+                <div className="flex space-x-4">
+                  <a className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-indigo-600">
+                    <i className="fa-brands fa-linkedin-in text-white"></i>
+                  </a>
+
+                  <a className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-indigo-600">
+                    <i className="fa-brands fa-github text-white"></i>
+                  </a>
+
+                  <a className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-indigo-600">
+                    <i className="fa-brands fa-facebook text-white"></i>
+                  </a>
+
+                  <a className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-indigo-600">
+                    <i className="fa-brands fa-instagram text-white"></i>
+                  </a>
+                </div>
+              </div>
+
             </div>
           </div>
+
         </form>
       </div>
     </section>
   );
 };
 
-export default Information;
+export default Information; 

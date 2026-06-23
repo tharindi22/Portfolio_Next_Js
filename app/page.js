@@ -2,9 +2,10 @@
 import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
-import Project from "./components/Project";
 import About from "./components/About";
 import Skills from "./components/Skills";
+import Project from "./components/Project";
+import Work from "./components/Work";
 import Footer from "./components/Footer";
 import Information from "./components/Information";
 
@@ -48,9 +49,10 @@ export default function Home() {
     <>
       <Navbar  />
       <Header />
-      <Project  />
       <About />
       <Skills />
+      <Project  />
+      <Work />
       <Information />
       <Footer />
              
