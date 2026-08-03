@@ -7,79 +7,63 @@ import Link from "next/link";
 const Projects = () => {
   return (
     <section id="projects" className="py-16 px-16">
-      <div className="max-w-5xl mx-auto ">
+      <div className="max-w-5xl mx-auto">
+        {/* Heading */}
         <div className="mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4  text-white">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             My <span className="gradient-text">Projects</span>
           </h2>
-
-          
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-7">
+        {/* Masonry Layout */}
+        <div className="columns-1 lg:columns-2 gap-10">
+          
           {/* Project 1 */}
-          <div className="project-card bg-gray-900 rounded-md overflow-hidden shadow-lg mb-16">
-            <Link href="/ProjectMore" target="BLYSS" className="">
-              <Image
-                src={assets.Home}
-                alt="BLYSS E-commerce Clothing Website"
-                className="object-cover  relative"
-              />
-              <div className="grid grid-cols-1 lg:grid-cols-2 items-center p-4">
-                <div>
-                  <h2 className="text-2xl text-white font-bold">BLYSS</h2>
-                </div>
+          <div className="break-inside-avoid mb-10 group rounded-xl overflow-hidden transition duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/20">
+            <Link
+              href="https://www.behance.net/gallery/253725277/Blyss-E-commerce-Clothing-Website-UIUX-Case-Study"
+              target="_blank"
+            >
+              <div className="overflow-hidden">
+                <Image
+                  src={assets.Home}
+                  alt="BLYSS E-commerce Clothing Website"
+                  className="object-cover w-full"
+                />
+              </div>
 
-                <div className="lg:text-right mt-2 lg:mt-0">
+              <div className="p-4">
+                <div className="flex justify-between items-center">
+                  <h2 className="text-2xl text-white font-bold">BLYSS</h2>
+
                   <h1 className="text-xs text-gray-400">2026</h1>
                 </div>
+
                 <p className="text-md text-white">
                   E-commerce Clothing Website
                 </p>
               </div>
             </Link>
-
-           
           </div>
 
           {/* Project 2 */}
-          <div className="project-card bg-gray-00 rounded-xl overflow-hidden shadow-lg mb-16">
-            <Link href="/ProjectMore/nexhome" className="">
-              <Image
-                src={assets.SamrtHome}
-                alt="NexHome Smart Home Dashboard"
-                className="object-cover  relative"
-              />
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 items-center p-4">
-                <div>
-                  <h2 className="text-2xl text-white font-bold">NexHome</h2>
-                </div>
-
-                <div className="lg:text-right mt-2 lg:mt-0">
-                  <h1 className="text-xs text-gray-400">2026</h1>
-                </div>
-
-                <p className="text-md text-white">Smart Home Web Dashboard</p>
+          <div className="break-inside-avoid mb-10 group rounded-xl overflow-hidden transition duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/20">
+            <Link
+              href="https://www.behance.net/gallery/253247871/Grabber-Mobile-Food-Ordering-App-UIUX-Case-Study"
+              target="_blank"
+            >
+              <div className="overflow-hidden">
+                <Image
+                  src={assets.FoodOrder}
+                  alt="Grabber Mobile Food Ordering App"
+                  className="object-cover w-full"
+                />
               </div>
-            </Link>
-          </div>
 
-          {/* Project 3 */}
-          <div className="project-card bg-gray-900 rounded-xl overflow-hidden shadow-lg mb-16">
-            <Link href="/ProjectMore/grabber" className="">
-              <Image
-                src={assets.FoodOrder}
-                alt="Grabber Mobile Food Ordering App"
-                className="object-cover  relative"
-              />
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 items-center p-4">
-                <div>
+              <div className="p-4">
+                <div className="flex justify-between items-center">
                   <h2 className="text-2xl text-white font-bold">Grabber</h2>
-                </div>
 
-                <div className="lg:text-right mt-2 lg:mt-0">
                   <h1 className="text-xs text-gray-400">2025</h1>
                 </div>
 
@@ -88,21 +72,50 @@ const Projects = () => {
             </Link>
           </div>
 
-           {/* Project 4 */}
-          <div className="project-card bg-gray-900 rounded-xl overflow-hidden shadow-lg mb-16">
-            <Link href="/ProjectMore/doctor-appointment-system" className="">
-              <Image
-                src={assets.DoctorAppointment}
-                alt="Doctor Appointment System"
-                className="object-cover  relative"
-              />
+          {/* Project 3 */}
+          <div className="break-inside-avoid mb-10 group rounded-xl overflow-hidden transition duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/20">
+            <Link
+              href=""
+              target="_blank"
+            >
+              <div className="overflow-hidden">
+                <Image
+                  src={assets.SamrtHome}
+                  alt="NexHome Smart Home Dashboard"
+                  className="object-cover w-full"
+                />
+              </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 items-center p-4">
-                <div>
-                  <h2 className="text-2xl text-white font-bold">MediCare</h2>
+              <div className="p-4">
+                <div className="flex justify-between items-center">
+                  <h2 className="text-2xl text-white font-bold">NexHome</h2>
+
+                  <h1 className="text-xs text-gray-400">2026</h1>
                 </div>
 
-                <div className="lg:text-right mt-2 lg:mt-0">
+                <p className="text-md text-white">Smart Home Web Dashboard</p>
+              </div>
+            </Link>
+          </div>
+
+          {/* Project 4 */}
+          <div className="break-inside-avoid mb-10 group rounded-xl overflow-hidden transition duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/20">
+            <Link
+              href="https://react-project-doctor-appoinment-fro.vercel.app/"
+              target="_blank"
+            >
+              <div className="overflow-hidden">
+                <Image
+                  src={assets.DoctorAppointment}
+                  alt="Doctor Appointment System"
+                  className="object-cover w-full"
+                />
+              </div>
+
+              <div className="p-4">
+                <div className="flex justify-between items-center">
+                  <h2 className="text-2xl text-white font-bold">MediCare</h2>
+
                   <h1 className="text-xs text-gray-400">2025</h1>
                 </div>
 
@@ -110,115 +123,14 @@ const Projects = () => {
               </div>
             </Link>
           </div>
-
-
-
-
-           {/* ================== start ==================
-
-            <div className="flex items-center gap-4 p-4 pt-2">
-              <Link
-                href="https://www.figma.com/design/2GLFjGRx4rDWcaEsX8agO6/Smart-Home?node-id=70-143&t=W6RzWBWPOY209Yvq-1"
-                target="NexHome"
-                className="px-6 py-2 flex-1 flex items-center justify-center gap-3 border border-gray-400 text-gray-400 text-base rounded-lg transition cursor-pointer"
-              >
-                View Figma Project
-                <i className="fas fa-external-link-alt text-xs"></i>
-              </Link>
-            </div> 
-
-            ================== End  ================== */}
-          {/* 
-          Project 4
-          <div className="project-card bg-gray-300 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg mb-16">
-            <Image
-              src={assets.Doctor}
-              alt="Doctor Appointment System"
-              className="object-cover h-60 relative"
-            />
-            <h2 className="text-xl text-indigo-700 dark:text-indigo-400 font-semibold p-4">
-              Doctor Appointment System
-            </h2>
-            <div className="flex items-center gap-3 p-4 pt-0">
-              <Link
-                href="https://react-project-doctor-appoinment-fro.vercel.app/"
-                target="_blank"
-                className="px-6 py-1 flex-1 flex items-center justify-center gap-3 border border-indigo-500 text-indigo-500 font-medium rounded-lg transition cursor-pointer"
-              >
-                View Project
-                <i className="fas fa-external-link-alt text-xs"></i>
-              </Link>
-
-              <Link href="https://github.com/tharindi22/React_Project-Doctor-Appoinment--frontend">
-                <button className="px-3 py-1 border border-indigo-500 text-indigo-500 font-medium rounded-lg transition cursor-pointer">
-                  <i className="fas fa-code"></i>
-                </button>
-              </Link>
-            </div>
-          </div>
-
-          Project 5
-          <div className="project-card bg-gray-300 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg mb-16">
-            <Image
-              src={assets.LMS}
-              alt="Learning Management System"
-              className="object-cover h-60 relative"
-            />
-            <h2 className="text-xl text-indigo-700 dark:text-indigo-400 font-semibold p-4">
-              Learning Management System
-            </h2>
-            <div className="flex items-center gap-3 p-4 pt-0">
-              <Link
-                href=""
-                target="_blank"
-                className="px-6 py-1 flex-1 flex items-center justify-center gap-3 border border-indigo-500 text-indigo-500 font-medium rounded-lg transition cursor-pointer"
-              >
-                View Project
-                <i className="fas fa-external-link-alt text-xs"></i>
-              </Link>
-
-              <Link href="https://github.com/tharindi22/lms_mern_project">
-                <button className="px-3 py-1 border border-indigo-500 text-indigo-500 font-medium rounded-lg transition cursor-pointer">
-                  <i className="fas fa-code"></i>
-                </button>
-              </Link>
-            </div>
-          </div>
-
-          Project 6
-          <div className="project-card bg-gray-300 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg mb-16">
-            <Image
-              src={assets.Cricket}
-              alt="Cricket Booking System"
-              className="object-cover h-60 relative"
-            />
-            <h2 className="text-xl text-indigo-700 dark:text-indigo-400 font-semibold p-4">
-              Cricket Booking System
-            </h2>
-            <div className="flex items-center gap-3 p-4 pt-0">
-              <Link
-                href=""
-                target="_blank"
-                className="px-6 py-1 flex-1 flex items-center justify-center gap-3 border border-indigo-500 text-indigo-500 font-medium rounded-lg transition cursor-pointer"
-              >
-                View Project
-                <i className="fas fa-external-link-alt text-xs"></i>
-              </Link>
-
-              <Link href="">
-                <button className="px-3 py-1 border border-indigo-500 text-indigo-500 font-medium rounded-lg transition cursor-pointer">
-                  <i className="fas fa-code"></i>
-                </button>
-              </Link>
-            </div>
-          </div>
-        */}
         </div>
+
+        {/* Button */}
 
         <div className="text-center mt-12">
           <Link
             href="https://www.linkedin.com/in/tharindi-aththanayaka/"
-            className="px-6 py-6 border border-indigo-500 text-indigo-500 font-medium rounded-lg hover:bg-indigo-500 hover:text-white transition"
+            className="px-6 py-4 border border-indigo-500 text-indigo-500 font-medium rounded-lg hover:bg-indigo-500 hover:text-white transition"
           >
             View All Projects in Linkedin
           </Link>

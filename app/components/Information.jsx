@@ -41,7 +41,6 @@ const Information = () => {
   return (
     <section id="Information" className="py-16 px-16 lg:px-20">
       <div className="max-w-6xl mx-auto">
-
         {/* Title */}
         <div className="mb-14">
           <h2 className="text-3xl md:text-4xl font-bold text-white">
@@ -63,11 +62,8 @@ const Information = () => {
           {/* LEFT - FORM */}
           <div className="lg:col-span-2">
             <div className="space-y-6">
-
               <div>
-                <label className="block text-gray-300 mb-1">
-                  Your Name
-                </label>
+                <label className="block text-gray-300 mb-1">Your Name</label>
                 <input
                   type="text"
                   name="first_name"
@@ -78,9 +74,7 @@ const Information = () => {
               </div>
 
               <div>
-                <label className="block text-gray-300 mb-1">
-                  Your Email
-                </label>
+                <label className="block text-gray-300 mb-1">Your Email</label>
                 <input
                   type="email"
                   name="email"
@@ -91,9 +85,7 @@ const Information = () => {
               </div>
 
               <div>
-                <label className="block text-gray-300 mb-1">
-                  Your Message
-                </label>
+                <label className="block text-gray-300 mb-1">Your Message</label>
 
                 <textarea
                   name="message"
@@ -111,9 +103,7 @@ const Information = () => {
                 </button>
 
                 {result && (
-                  <p className="mt-3 text-center text-green-400">
-                    {result}
-                  </p>
+                  <p className="mt-3 text-center text-green-400">{result}</p>
                 )}
               </div>
             </div>
@@ -122,28 +112,26 @@ const Information = () => {
           {/* RIGHT - CONTACT */}
           <div className="flex justify-center lg:justify-end">
             <div className="w-full max-w-sm bg-gray-800 rounded-xl p-6 space-y-6">
-
               <h3 className="text-2xl font-semibold text-white">
                 Contact Information
               </h3>
 
               {/* Email */}
-          
-                <div className="flex items-center">
-                  <div className="w-10 h-10 rounded-full bg-indigo-500/20 flex items-center justify-center mr-3">
-                    <i className="fas fa-envelope text-indigo-400"></i>
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-gray-300">Email</h4>
-                    <a
-                      href="mailto:ttharindiattanayaka@gmail.com"
-                      className="text-indigo-400 text-sm"
-                    >
-                      ttharindiattanayaka@gmail.com
-                    </a>
-                  </div>
-                </div>
 
+              <div className="flex items-center">
+                <div className="w-10 h-10 rounded-full bg-indigo-500/20 flex items-center justify-center mr-3">
+                  <i className="fas fa-envelope text-indigo-400"></i>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-300">Email</h4>
+                  <a
+                    href="mailto:ttharindiattanayaka@gmail.com"
+                    className="text-indigo-400 text-sm"
+                  >
+                    ttharindiattanayaka@gmail.com
+                  </a>
+                </div>
+              </div>
 
               {/* Phone */}
               <div className="flex items-center">
@@ -179,31 +167,51 @@ const Information = () => {
                 <p className="text-gray-300 mb-3 text-md">Social Media</p>
 
                 <div className="flex space-x-4">
-                  <a className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-indigo-600">
+                  {/* LinkedIn */}
+                  <a
+                    href="https://www.linkedin.com/in/tharindi-aththanayaka/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-indigo-600"
+                  >
                     <i className="fa-brands fa-linkedin-in text-white"></i>
                   </a>
 
-                  <a className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-indigo-600">
+                  {/* GitHub */}
+                  <a
+                    href="https://github.com/tharindi22?tab=overview&from=2025-02-01&to=2025-02-05"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-indigo-600"
+                  >
                     <i className="fa-brands fa-github text-white"></i>
                   </a>
 
-                  <a className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-indigo-600">
-                    <i className="fa-brands fa-facebook text-white"></i>
+                  {/* Behance */}
+                  <a
+                    href="https://www.behance.net/tharindiaththanayaka"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-indigo-600"
+                  >
+                    <i className="fa-brands fa-behance text-white"></i>
                   </a>
 
-                  <a className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-indigo-600">
-                    <i className="fa-brands fa-instagram text-white"></i>
+                  {/* Email */}
+                  <a
+                    href="mailto:tharindiattanayaka@gmail.com"
+                    className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-indigo-600"
+                  >
+                    <i className="fas fa-envelope text-white"></i>
                   </a>
                 </div>
               </div>
-
             </div>
           </div>
-
         </form>
       </div>
     </section>
   );
 };
 
-export default Information; 
+export default Information;

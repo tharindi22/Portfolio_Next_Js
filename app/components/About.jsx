@@ -47,7 +47,7 @@ const About = () => {
 
             <div className="p-6 rounded-xl border border-gray-700 bg-gray-800 ">
               <h3 className="text-4xl font-bold text-indigo-400">6</h3>
-              <p className="text-gray-300 mt-2">MOnths of Experience</p>
+              <p className="text-gray-300 mt-2">Months of Experience</p>
             </div>
 
             <div className="p-6 rounded-xl border border-gray-700 bg-gray-800 ">

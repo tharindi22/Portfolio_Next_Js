@@ -2,119 +2,97 @@ import React from "react";
 import Image from "next/image";
 
 const Skills = () => {
-  const uiuxSkills = [
-    "User Research",
-    "Wireframing",
-    "Interactive Prototyping",
-    "User Flows",
-    "Usability Testing",
-    "Responsive Design",
-  ];
-
-  const frontendSkills = [
-    "React.js Development",
-    "Next.js Development",
-    "HTML",
-    "CSS",
-    "Tailwind CSS",
-    "Component-Based Development",
+  const process = [
+    {
+      number: "01",
+      title: "Research",
+      text: "Understanding users through research, personas, and user journeys.",
+    },
+    {
+      number: "02",
+      title: "Design",
+      text: "Creating wireframes, interfaces, and design systems focused on usability.",
+    },
+    {
+      number: "03",
+      title: "Prototype",
+      text: "Building interactive prototypes and testing experiences before development.",
+    },
+    {
+      number: "04",
+      title: "Develop",
+      text: "Transforming designs into responsive and scalable digital products.",
+    },
   ];
 
   const tools = [
-    { name: "Figma", icon: "/icons/figma-svgrepo-com - Copy.svg" },
+    {  name: "Figma", icon: "/icons/figma-svgrepo-com - Copy.svg" },
     { name: "Framer", icon: "/icons/framer-2.svg" },
-    { name: "Behance", icon: "/icons/behance-2.svg" },
-    { name: "Photoshop", icon: "/icons/adobe-photoshop-2.svg" },
-    { name: "Adobe XD", icon: "/icons/adobe-xd-2.svg" },
-    { name: "Github", icon: "/icons/github-icon-1.svg" },
-    { name: "VS Code", icon: "/icons/visual-studio-code-1.svg" },
-    { name: "React", icon: "/icons/react-native-1.svg" },
-    { name: "Next.js", icon: "/icons/next-js.svg" },
+    {  name: "Photoshop", icon: "/icons/adobe-photoshop-2.svg" },
+    {  name: "React", icon: "/icons/react-native-1.svg" },
+    {  name: "Next.js", icon: "/icons/next-js.svg" },
+    {  name: "VS Code", icon: "/icons/visual-studio-code-1.svg" },
+    {  name: "GitHub", icon: "/icons/github-icon-1.svg" },
+    {  name: "HTML", icon: "/icons/html-1.svg" },
+    {  name: "CSS", icon: "/icons/css-3.svg" },
+    {  name: "JavaScript", icon: "/icons/javascript-1.svg" },
   ];
 
   return (
-    <section id="skills" className="py-16 px-6 lg:px-20">
+    <section id="skills" className="py-24 px-6 lg:px-20">
       <div className="max-w-6xl mx-auto">
-        {/* Title */}
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">
-          My <span className="gradient-text">Skills</span>
-        </h2>
+        <div className="mb-14">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4  text-white">
+            Skills & <span className="gradient-text">Expertise</span>
+          </h2>
+         
+        </div>
 
-        {/* 3 GRID LAYOUT */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* UI UX */}
-          <div className="bg-gray-900 rounded-md p-6">
-            <h3 className="text-xl font-semibold text-white mb-5">
-              UI/UX Design
-            </h3>
+        
 
-            <ul className="space-y-3">
-              {uiuxSkills.map((skill, i) => (
-                <li key={i} className="flex items-center gap-3 text-gray-300">
-                  <span className="w-2 h-2 bg-indigo-500 rounded-full"></span>
-                  {skill}
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="grid md:grid-cols-4 gap-6">
+          {process.map((item) => (
+            <div
+              key={item.number}
+              className="
+              border-t
+              border-gray-900
+              pt-5
+              "
+            >
+              <span className="text-indigo-400 text-sm">{item.number}</span>
 
-          {/* FRONTEND */}
-          <div className="bg-gray-900 rounded-md p-6">
-            <h3 className="text-xl font-semibold text-white mb-5">
-              Frontend Development
-            </h3>
+              <h3 className="text-2xl text-white font-semibold mt-4">
+                {item.title}
+              </h3>
 
-            <ul className="space-y-3">
-              {frontendSkills.map((skill, i) => (
-                <li key={i} className="flex items-center gap-3 text-gray-300">
-                  <span className="w-2 h-2 bg-indigo-500 rounded-full"></span>
-                  {skill}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* TOOLS */}
-          <div>
-            <h3 className="text-xl font-semibold text-white mb-6">Tools</h3>
-
-            <div className="grid grid-cols-2 gap-4">
-              {tools.map((tool) => (
-                <div
-                  key={tool.name}
-                  className="
-                  flex items-center gap-4
-                  px-4 py-3
-                  bg-gray-800
-                  border border-gray-900
-                  rounded-xl
-                  text-white
-                
-                  "
-                >
-                  {/* Icon Box */}
-                  <div
-                    className="
-                    w-8 h-8
-                    flex items-center justify-center
-                    rounded-lg
-                    bg-gray-800
-                    shrink-0
-                    "
-                  >
-                    <Image
-                      src={tool.icon}
-                      alt={tool.name}
-                      width={24}
-                      height={24}
-                      className="object-contain"
-                    />
-                  </div>
-
-                  <span className="text-sm font-medium">{tool.name}</span>
-                </div>
-              ))}
+              <p className="text-gray-400 mt-3 leading-relaxed">{item.text}</p>
             </div>
+          ))}
+        </div>
+
+        <div className="mt-20">
+          
+
+          <div className="flex flex-wrap gap-4">
+            {tools.map((tool) => (
+              <div
+                key={tool.name}
+                className="
+                flex items-center 
+                px-5 py-3
+                rounded-md
+                text-sm
+                border border-gray-900
+                bg-gray-800
+                gap-2
+                "
+              >
+                <Image src={tool.icon} alt={tool.name} width={25} height={25} />
+
+                <span className="text-gray-300">{tool.name}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -28,10 +28,10 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
 
   const navItems = [
     { id: "home", label: "Home" },
-    { id: "projects", label: "Projects" },
     { id: "about", label: "About" },
     { id: "skills", label: "Skills" },
-    { id: "contact", label: "Contact" },
+    { id: "projects", label: "Projects" },
+    { id: "Information", label: "Information" },
   ];
 
   return (

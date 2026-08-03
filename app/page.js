@@ -5,13 +5,8 @@ import Header from "./components/Header";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Project from "./components/Project";
-import Work from "./components/Work";
 import Footer from "./components/Footer";
 import Information from "./components/Information";
-
-
-
-
 
 
 
@@ -52,7 +47,6 @@ export default function Home() {
       <About />
       <Skills />
       <Project  />
-      <Work />
       <Information />
       <Footer />
              
